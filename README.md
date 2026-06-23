@@ -1,36 +1,55 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Sai Charan — Portfolio
 
-## Getting Started
+A single-page personal portfolio for **U Sai Charan**, Frontend Engineer.
+Dark-only, bold & creative, built with Next.js 14 (App Router), TypeScript,
+Tailwind CSS, and Framer Motion.
 
-First, run the development server:
+## Stack
+
+- **Framework:** Next.js 14 (App Router)
+- **Language:** TypeScript
+- **Styling:** Tailwind CSS 3
+- **Animation:** Framer Motion + react-type-animation
+- **Icons:** lucide-react (UI) + simple-icons (brand logos)
+- **Contact form:** EmailJS
+- **Toasts:** react-hot-toast
+
+## Getting started
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open http://localhost:3000.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Before you deploy
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. **Resume:** drop your PDF at `public/Sai_Charan_Resume.pdf`
+   (see `public/RESUME_README.txt`).
+2. **Contact form:** copy `.env.local.example` to `.env.local` and fill in your
+   EmailJS Service ID, Template ID, and Public Key. The EmailJS template should
+   reference the variables `from_name`, `from_email`, `subject`, `message`.
+   Without these, the form UI works but shows an error toast on submit.
+3. On Vercel, add the same three `NEXT_PUBLIC_EMAILJS_*` variables in
+   Project → Settings → Environment Variables.
 
-## Learn More
+## Content
 
-To learn more about Next.js, take a look at the following resources:
+All site content lives in `src/data/portfolio.ts`. Edit it there — components
+never hardcode content.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Structure
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```
+src/
+├── app/            layout, page, globals.css
+├── data/           portfolio.ts (all content)
+├── lib/            utils (cn), skillIcons (simple-icons registry)
+├── hooks/          useActiveSection, useScrollDirection, usePrefersReducedMotion
+└── components/
+    ├── layout/     Navbar, Footer
+    ├── sections/   Hero, About, Skills, Projects, Experience, Contact
+    ├── ui/         SectionHeader, ProjectCard, ProjectModal, TimelineItem, ...
+    └── effects/    BackgroundBlobs
+```
