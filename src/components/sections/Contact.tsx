@@ -88,7 +88,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="mx-auto max-w-6xl px-6 py-20">
+    <section id="contact" className="mx-auto max-w-6xl scroll-mt-4 px-6 py-8">
       <SectionHeader index="06. contact" title="Let's" accent="Connect" />
 
       <p className="mx-auto mb-12 max-w-xl text-center text-text-secondary">

@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { TypeAnimation } from "react-type-animation";
 import { Github, Linkedin, Mail, ChevronDown, ArrowDown } from "lucide-react";
 import { personalInfo, typedRoles } from "@/data/portfolio";
+import AvailabilityBadge from "@/components/ui/AvailabilityBadge";
 
 const container = {
   hidden: {},
@@ -17,13 +18,14 @@ const item = {
   show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
 };
 
-const typeSequence = typedRoles.flatMap((role) => [role, 2000]);
+// Pause proportional to role length so short roles don't linger as long.
+const typeSequence = typedRoles.flatMap((role) => [role, 1000 + role.length * 45]);
 
 export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative flex min-h-screen flex-col items-center justify-center px-6 text-center"
+      className="relative flex min-h-screen flex-col items-center justify-center px-6 pt-16 text-center"
     >
       <motion.div
         variants={container}
@@ -38,12 +40,16 @@ export default function Hero() {
           Hi, I&apos;m
         </motion.p>
 
-        <motion.h1
-          variants={item}
-          className="font-display text-6xl font-bold text-white md:text-8xl"
-        >
-          {personalInfo.firstName}
-        </motion.h1>
+        <motion.div variants={item} className="relative flex justify-center">
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute top-1/2 h-40 w-72 -translate-y-1/2 rounded-full opacity-30 blur-[70px]"
+            style={{ background: "var(--gradient-brand)" }}
+          />
+          <h1 className="relative font-display text-6xl font-bold gradient-text-animated md:text-8xl">
+            {personalInfo.firstName}
+          </h1>
+        </motion.div>
 
         <motion.div
           variants={item}
@@ -55,7 +61,7 @@ export default function Hero() {
             wrapper="span"
             speed={50}
             repeat={Infinity}
-            className="gradient-text"
+            className="gradient-text-animated"
             cursor
           />
         </motion.div>
@@ -110,6 +116,10 @@ export default function Hero() {
             <Mail size={20} />
           </a>
         </motion.div>
+
+        <motion.div variants={item} className="mt-8">
+          <AvailabilityBadge />
+        </motion.div>
       </motion.div>
 
       {/* Scroll indicator */}
@@ -119,7 +129,7 @@ export default function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.4 }}
-        className="absolute bottom-8 text-text-muted"
+        className="bottom-8 text-text-muted"
       >
         <ChevronDown size={28} className="animate-bounce-slow" />
       </motion.a>

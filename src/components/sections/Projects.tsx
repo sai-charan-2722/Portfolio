@@ -15,7 +15,7 @@ export default function Projects() {
   const activeProject = projects.find((p) => p.id === openId) ?? null;
 
   return (
-    <section id="projects" className="mx-auto max-w-6xl px-6 py-20">
+    <section id="projects" className="mx-auto max-w-6xl scroll-mt-4 px-6 py-16">
       <SectionHeader index="04. projects" title="My" accent="Work" />
 
       {/* Featured row */}

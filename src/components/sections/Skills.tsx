@@ -5,10 +5,11 @@ import { Sparkles } from "lucide-react";
 import { aiBadge, skillCategories } from "@/data/portfolio";
 import SectionHeader from "@/components/ui/SectionHeader";
 import SkillCard from "@/components/ui/SkillCard";
+import { revealUp } from "@/lib/motion";
 
 export default function Skills() {
   return (
-    <section id="skills" className="mx-auto max-w-6xl px-6 py-20">
+    <section id="skills" className="mx-auto max-w-6xl scroll-mt-4 px-6 py-16">
       <SectionHeader index="03. skills" title="My" accent="Tech Stack" />
 
       <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
@@ -19,10 +20,7 @@ export default function Skills() {
 
       {/* AI callout */}
       <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-80px" }}
-        transition={{ duration: 0.5 }}
+        {...revealUp}
         className="mt-6 rounded-2xl border border-accent-purple/30 bg-gradient-subtle p-6"
       >
         <div className="mb-3 flex items-center gap-3">

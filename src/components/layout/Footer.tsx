@@ -7,7 +7,7 @@ export default function Footer() {
         <span className="font-display text-xl font-bold gradient-text">SC</span>
 
         <p className="text-center text-sm text-text-muted">
-          © 2025 U Sai Charan · Designed &amp; Built with ❤️ in Hyderabad
+          © {new Date().getFullYear()} U Sai Charan · Designed &amp; Built with ❤️ in Hyderabad
         </p>
 
         <div className="flex gap-6">

@@ -70,6 +70,7 @@ export const skillCategories = [
       "RxJS",
       "React",
       "Vite",
+      "Karma + Jasmine",
     ],
   },
   {
@@ -105,7 +106,6 @@ export const skillCategories = [
       "Claude Code",
       "Amazon Q Developer",
       "VS Code",
-      "Karma + Jasmine",
     ],
   },
 ];

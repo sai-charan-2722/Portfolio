@@ -7,10 +7,11 @@ import SectionHeader from "@/components/ui/SectionHeader";
 import TimelineItem from "@/components/ui/TimelineItem";
 import BrandIcon from "@/components/ui/BrandIcon";
 import { getSkillIcon } from "@/lib/skillIcons";
+import { revealUp } from "@/lib/motion";
 
 export default function Experience() {
   return (
-    <section id="experience" className="mx-auto max-w-4xl px-6 py-20">
+    <section id="experience" className="mx-auto max-w-4xl scroll-mt-4 px-6 py-16">
       <SectionHeader index="05. experience" title="My" accent="Journey" />
 
       {/* Timeline */}
@@ -26,13 +27,7 @@ export default function Experience() {
       </div>
 
       {/* Certifications */}
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-80px" }}
-        transition={{ duration: 0.5 }}
-        className="mt-12"
-      >
+      <motion.div {...revealUp} className="mt-12">
         <p className="mb-4 font-mono text-xs uppercase tracking-widest text-accent-purple">
           Certifications
         </p>
@@ -50,10 +45,13 @@ export default function Experience() {
                 )}
               </div>
               <div className="min-w-0">
-                <p className="truncate text-sm font-medium text-white">
+                <p
+                  title={cert.name}
+                  className="truncate text-sm font-medium text-white"
+                >
                   {cert.name}
                 </p>
-                <p className="truncate text-xs text-text-muted">
+                <p title={cert.issuer} className="truncate text-xs text-text-muted">
                   {cert.issuer}
                 </p>
               </div>

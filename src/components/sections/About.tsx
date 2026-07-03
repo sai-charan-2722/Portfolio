@@ -10,21 +10,17 @@ import {
 } from "@/data/portfolio";
 import SectionHeader from "@/components/ui/SectionHeader";
 import MetricCard from "@/components/ui/MetricCard";
+import AvailabilityBadge from "@/components/ui/AvailabilityBadge";
+import { revealUp, revealUpDelayed } from "@/lib/motion";
 
 export default function About() {
   return (
-    <section id="about" className="mx-auto max-w-6xl px-6 py-20 md:py-20">
+    <section id="about" className="mx-auto max-w-6xl scroll-mt-4 px-6 py-16 md:py-16">
       <SectionHeader index="02. about" title="About" accent="Me" />
 
       <div className="grid grid-cols-1 items-start gap-12 lg:grid-cols-2">
         {/* Left: avatar + status + metrics */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.5 }}
-          className="flex flex-col items-center"
-        >
+        <motion.div {...revealUp} className="flex flex-col items-center">
           {/* Avatar */}
           <div className="relative h-[200px] w-[200px]">
             <div className="avatar-ring absolute inset-0 animate-spin-slow rounded-full" />
@@ -40,17 +36,7 @@ export default function About() {
 
           {/* Badges */}
           <div className="mt-6 flex flex-wrap justify-center gap-3">
-            <span
-              className="inline-flex items-center gap-2 rounded-full px-3 py-1.5 text-sm font-medium"
-              style={{
-                background: "rgba(16,185,129,0.12)",
-                border: "1px solid rgba(16,185,129,0.3)",
-                color: "#10B981",
-              }}
-            >
-              <span className="h-2 w-2 rounded-full bg-accent-green" />
-              Available for Opportunities
-            </span>
+            <AvailabilityBadge />
             <span className="inline-flex items-center gap-1.5 rounded-full bg-background-tertiary px-3 py-1.5 text-sm text-text-secondary">
               <MapPin size={14} /> Hyderabad, IN
             </span>
@@ -65,12 +51,7 @@ export default function About() {
         </motion.div>
 
         {/* Right: bio + stack */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.5, delay: 0.1 }}
-        >
+        <motion.div {...revealUpDelayed}>
           {aboutText.map((p, i) => (
             <p
               key={i}
