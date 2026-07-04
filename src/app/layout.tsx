@@ -25,7 +25,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://sai-charan.vercel.app"),
+  metadataBase: new URL("https://sai-charan-yadav-portfolio.vercel.app/"),
   title: "Sai Charan | Frontend Engineer — Angular, TypeScript, MEAN Stack",
   description:
     "Portfolio of U Sai Charan, a Frontend Engineer at Cognizant building fast Angular applications. Reduced app load time by 30%. Open to mid/senior frontend & full-stack roles.",
