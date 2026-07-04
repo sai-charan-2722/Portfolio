@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { MapPin, ArrowRight } from "lucide-react";
 import {
@@ -25,12 +26,17 @@ export default function About() {
           <div className="relative h-[200px] w-[200px]">
             <div className="avatar-ring absolute inset-0 animate-spin-slow rounded-full" />
             <div
-              className="absolute inset-[4px] flex items-center justify-center rounded-full bg-gradient-brand"
+              className="absolute inset-[4px] overflow-hidden rounded-full bg-background-secondary"
               style={{ boxShadow: "0 0 60px rgba(124,58,237,0.3)" }}
             >
-              <span className="font-display text-5xl font-bold text-white">
-                SC
-              </span>
+              <Image
+                src="/profile.jpg"
+                alt={`${personalInfo.name} portrait`}
+                fill
+                sizes="200px"
+                priority
+                className="object-cover"
+              />
             </div>
           </div>
 
