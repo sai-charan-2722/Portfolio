@@ -162,6 +162,15 @@ export default function Navbar() {
             >
               <Linkedin size={24} />
             </a>
+            <a
+              href={`mailto:${personalInfo.email}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Send Email"
+              className="icon-link"
+            >
+              <Mail size={24} />
+            </a>
           </div>
         </motion.div>
       )}
