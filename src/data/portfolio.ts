@@ -25,13 +25,16 @@ export const typedRoles = [
 export const aboutText = [
   "I'm a frontend engineer who believes the gap between a good UI and a great one is almost always a performance problem. For the past year I've been building production Angular applications at Cognizant — shipping 15+ responsive pages, cutting initial load times by 30%, and wiring NgRx state machines that hold up under real pressure.",
   "My stack lives in the Angular ecosystem — TypeScript, NgRx, RxJS — but I'm comfortable across the full MEAN stack and have shipped backends with Java and Spring Boot too. What makes me a bit different: I pair traditional engineering skills with a Prompt Engineering mindset, using AI tools like GitHub Copilot and Claude Code to move faster and write cleaner code.",
+  "I enjoy treating AI as a true development partner rather than just an autocomplete tool—using it to prototype ideas, refactor complex code, generate tests and documentation, and speed up debugging, so I can spend more time solving the problems that actually matter."  
 ];
 
 export type MetricColor = "purple" | "cyan" | "amber" | "green";
 
 export const metrics: { value: string; label: string; color: MetricColor }[] = [
-  { value: "1+", label: "Years Experience", color: "purple" },
-  { value: "15+", label: "Pages Shipped", color: "cyan" },
+  { value: "2.5+", label: "Years Experience", color: "purple" },
+  // { value: "15+", label: "Pages Shipped", color: "cyan" },
+  { value: "15+", label: "REST APIs Integrated", color: "green" },
+  // { value: "20+", label: "Reusable Components", color: "purple" },
   { value: "30%", label: "Load Time Reduced", color: "amber" },
   { value: "4", label: "Projects on GitHub", color: "green" },
 ];
@@ -112,8 +115,8 @@ export const skillCategories = [
 
 export const aiBadge = {
   heading: "AI-Augmented Developer",
-  body: "Integrating GitHub Copilot and Prompt Engineering into my daily workflow to ship faster, write cleaner code, and stay ahead of the curve.",
-  tags: ["GitHub Copilot", "Prompt Engineering", "Vibe Coding"],
+  body: "Embracing AI-assisted software development by combining Claude Code with prompt engineering to accelerate delivery, improve code quality, and focus more on solving complex engineering challenges.",
+  tags: ["Claude Code","GitHub Copilot", "Prompt Engineering", "Vibe Coding", "Amazon Q Developer", "AI-assisted Development", "Context management"],
 };
 
 export type CoverAccent = "teal" | "purple" | "cyan" | "amber";
@@ -282,12 +285,37 @@ export interface ExperienceItem {
 
 export const experience: ExperienceItem[] = [
   {
-    role: "Programmer Analyst",
+    role: "Associate",
     company: "Cognizant",
-    period: "Dec 2023 – Present",
+    period: "Jul 2026 – Present",
     location: "Hyderabad, Telangana",
     type: "work",
-    icon: "briefcase",
+    icon: "code",
+    bullets: [
+      "Leveraged AI-powered development tools such as Claude Code and Amazon Q Developer to accelerate feature implementation, generate boilerplate code, debug complex issues, and improve overall developer productivity.",
+      "Designed scalable Angular applications using standalone components, reactive forms, RxJS, and NgRx for predictable state management.",
+      "Integrated secure RESTful APIs with robust error handling, authentication workflows, and responsive user interfaces.",
+      "Contributed to CI/CD workflows, Git-based version control, and peer code reviews to maintain high-quality, production-ready releases.",
+      "Collaborated closely with product owners, UX designers, QA engineers, and backend developers to deliver high-quality features in Agile sprints while ensuring seamless API integration.",
+      "Mentored junior developers through code reviews, knowledge sharing, and best practices, promoting clean architecture and consistent coding standards.",
+    ],
+    tech: [
+      "Angular",
+      "TypeScript",
+      "Claude Code",
+      "Amazon Q Developer",
+      "Zeplin",
+      "Jenkins",
+      "SonarQube",
+    ],
+  },
+  {
+    role: "Programmer Analyst",
+    company: "Cognizant",
+    period: "Dec 2024 – Jul 2026",
+    location: "Hyderabad, Telangana",
+    type: "work",
+    icon: "code",
     bullets: [
       "Develop and maintain web applications using Angular; built 15+ responsive pages pixel-perfectly aligned with Figma designs.",
       "Collaborate with backend teams to integrate RESTful APIs and troubleshoot end-to-end flows across the stack.",
@@ -312,7 +340,7 @@ export const experience: ExperienceItem[] = [
     period: "Oct 2023 – Dec 2023",
     location: "Hyderabad, Telangana",
     type: "internship",
-    icon: "code",
+    icon: "briefcase",
     bullets: [
       "Completed intensive training programme covering MEAN stack fundamentals.",
       "Built proof-of-concept components and practised API integration and state management basics.",
@@ -335,11 +363,11 @@ export const experience: ExperienceItem[] = [
 ];
 
 export const certifications = [
-  { name: "AWS Cloud Foundations", issuer: "NSIC", icon: "amazonaws" },
-  { name: "Python Programming", issuer: "Spoken Tutorial (IIT)", icon: "python" },
-  { name: "Arduino", issuer: "Spoken Tutorial (IIT)", icon: "arduino" },
   { name: "JavaScript", issuer: "Udemy", icon: "javascript" },
   { name: "Angular", issuer: "Udemy", icon: "angular" },
+  { name: "AWS Cloud Foundations", issuer: "NSIC", icon: "amazonaws" },
+  { name: "Python Programming", issuer: "Spoken Tutorial (IIT)", icon: "python" },
+  { name: "Jenkins", issuer: "Udemy", icon: "jenkins" },
   { name: "Java & Spring Boot", issuer: "Udemy", icon: "spring" },
 ];
 
