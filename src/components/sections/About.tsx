@@ -20,43 +20,7 @@ export default function About() {
       <SectionHeader index="02. about" title="About" accent="Me" />
 
       <div className="grid grid-cols-1 items-start gap-12 lg:grid-cols-2">
-        {/* Left: avatar + status + metrics */}
-        <motion.div {...revealUp} className="flex flex-col items-center">
-          {/* Avatar */}
-          <div className="relative h-[200px] w-[200px]">
-            <div className="avatar-ring absolute inset-0 animate-spin-slow rounded-full" />
-            <div
-              className="absolute inset-[4px] overflow-hidden rounded-full bg-background-secondary"
-              style={{ boxShadow: "0 0 60px rgba(124,58,237,0.3)" }}
-            >
-              <Image
-                src="/profile.jpg"
-                alt={`${personalInfo.name} portrait`}
-                fill
-                sizes="200px"
-                priority
-                className="object-cover"
-              />
-            </div>
-          </div>
-
-          {/* Badges */}
-          <div className="mt-6 flex flex-wrap justify-center gap-3">
-            <AvailabilityBadge />
-            <span className="inline-flex items-center gap-1.5 rounded-full bg-background-tertiary px-3 py-1.5 text-sm text-text-secondary">
-              <MapPin size={14} /> Hyderabad, IN
-            </span>
-          </div>
-
-          {/* Metrics 2x2 */}
-          <div className="mt-8 grid w-full max-w-sm grid-cols-2 gap-4">
-            {metrics.map((m) => (
-              <MetricCard key={m.label} {...m} />
-            ))}
-          </div>
-        </motion.div>
-
-        {/* Right: bio + stack */}
+        {/* Left: bio + stack */}
         <motion.div {...revealUpDelayed}>
           {aboutText.map((p, i) => (
             <p
@@ -95,6 +59,42 @@ export default function About() {
             >
               View Projects <ArrowRight size={16} />
             </a>
+          </div>
+        </motion.div>
+
+        {/* Right: avatar + status + metrics */}
+        <motion.div {...revealUp} className="flex flex-col items-center">
+          {/* Avatar */}
+          <div className="relative h-[200px] w-[200px]">
+            <div className="avatar-ring absolute inset-0 animate-spin-slow rounded-full" />
+            <div
+              className="absolute inset-[4px] overflow-hidden rounded-full bg-background-secondary"
+              style={{ boxShadow: "0 0 60px rgba(124,58,237,0.3)" }}
+            >
+              <Image
+                src="/profile.jpg"
+                alt={`${personalInfo.name} portrait`}
+                fill
+                sizes="200px"
+                priority
+                className="object-cover"
+              />
+            </div>
+          </div>
+
+          {/* Badges */}
+          <div className="mt-6 flex flex-wrap justify-center gap-3">
+            <AvailabilityBadge />
+            <span className="inline-flex items-center gap-1.5 rounded-full bg-background-tertiary px-3 py-1.5 text-sm text-text-secondary">
+              <MapPin size={14} /> Hyderabad, IN
+            </span>
+          </div>
+
+          {/* Metrics 2x2 */}
+          <div className="mt-8 grid w-full max-w-sm grid-cols-2 gap-4">
+            {metrics.map((m) => (
+              <MetricCard key={m.label} {...m} />
+            ))}
           </div>
         </motion.div>
       </div>

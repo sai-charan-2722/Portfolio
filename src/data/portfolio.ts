@@ -32,9 +32,9 @@ export type MetricColor = "purple" | "cyan" | "amber" | "green";
 
 export const metrics: { value: string; label: string; color: MetricColor }[] = [
   { value: "2.5+", label: "Years Experience", color: "purple" },
-  // { value: "15+", label: "Pages Shipped", color: "cyan" },
+  { value: "15+", label: "Pages Shipped", color: "cyan" },
   { value: "15+", label: "REST APIs Integrated", color: "green" },
-  // { value: "20+", label: "Reusable Components", color: "purple" },
+  { value: "20+", label: "Reusable Components", color: "purple" },
   { value: "30%", label: "Load Time Reduced", color: "amber" },
   { value: "4", label: "Projects on GitHub", color: "green" },
 ];
